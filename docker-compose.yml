@@ -1,0 +1,13 @@
+version: "3"
+services:
+  rinha:
+    build:
+      context: "."
+    ports:
+      - "8080"
+  nginx:
+    build: "./nginx"
+    ports:
+      - "80:80"
+    depends_on:
+      - "rinha"

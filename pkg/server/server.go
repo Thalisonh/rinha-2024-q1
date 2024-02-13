@@ -10,10 +10,10 @@ import (
 func Init() {
 	app := fiber.New()
 
-	app.Get("/api/*", func(c fiber.Ctx) error {
-		msg := fmt.Sprintf("✋ %s", c.Params("*"))
+	app.Get("/", func(c fiber.Ctx) error {
+		msg := fmt.Sprintf("✋")
 		return c.SendString(msg) // => ✋ register
 	})
 
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(":8080"))
 }
